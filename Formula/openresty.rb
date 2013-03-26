@@ -39,7 +39,10 @@ class Openresty < Formula
 
     system "make install"
 
-    # Make the log directory for nginx, the nginx.conf will point here
+    # Make the log and run directory for nginx,
+    # nginx.conf will point to this for the logs
+    # sbin/nginx is compiled to use run/nginx for temp directories
+    (var/'run/nginx').mkpath
     (var/'log/nginx').mkpath
   end
 
