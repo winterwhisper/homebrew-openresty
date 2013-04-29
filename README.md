@@ -1,4 +1,4 @@
-# OenResty Tap
+# OpenResty Tap
 
 Tap for Homebrew that add a formula for OpenResty.
 
