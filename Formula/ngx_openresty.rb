@@ -21,6 +21,7 @@ class NgxOpenresty < Formula
     args = ["--prefix=#{prefix}",
       "--with-http_ssl_module",
       "--with-pcre",
+      "--with-pcre-jit",
       "--with-cc-opt='-I#{HOMEBREW_PREFIX}/include'",
       "--with-ld-opt='-L#{HOMEBREW_PREFIX}/lib'",
       "--sbin-path=#{bin}/openresty",
