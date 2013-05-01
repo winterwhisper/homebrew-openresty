@@ -8,6 +8,7 @@ class NgxOpenresty < Formula
   depends_on 'pcre'
   depends_on 'luajit' if build.include? 'with-luajit'
   depends_on 'libdrizzle' if build.include? 'with-drizzle'
+  depends_on 'postgresql' if build.include? 'with-postgres'
 
   option 'with-luajit', "Compile with support for the Lua Just-In-Time Compiler"
   option 'with-drizzle', "Compile with support for upstream communication with MySQL and/or Drizzle database servers"
