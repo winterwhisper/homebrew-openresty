@@ -6,11 +6,11 @@ class NgxOpenresty < Formula
   sha1 'f7a5c697d6cae8473023375cedae56752bea442b'
 
   depends_on 'pcre'
-  depends_on 'luajit' if build.include? 'with-luajit'
+  depends_on 'luajit' unless build.include? 'without-luajit'
   depends_on 'libdrizzle' if build.include? 'with-drizzle'
   depends_on 'postgresql' if build.include? 'with-postgres'
 
-  option 'with-luajit', "Compile with support for the Lua Just-In-Time Compiler"
+  option 'without-luajit', "Compile *without* support for the Lua Just-In-Time Compiler"
   option 'with-drizzle', "Compile with support for upstream communication with MySQL and/or Drizzle database servers"
   option 'with-postgres', "Compile with support for direct communication with PostgreSQL database servers"
   option 'with-iconv', "Compile with support for converting character encodings"
@@ -32,7 +32,7 @@ class NgxOpenresty < Formula
     args << "--with-http_dav_module" if build.include? 'with-webdav'
 
     # OpenResty options
-    args << "--with-luajit" if build.include? 'with-luajit'
+    args << "--with-luajit" unless build.include? 'without-luajit'
     args << "--with-http_drizzle_module" if build.include? 'with-drizzle'
     args << "--with-http_postgres_module" if build.include? 'with-postgres'
     args << "--with-http_iconv_module" if build.include? 'with-iconv'
