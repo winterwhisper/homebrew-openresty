@@ -14,6 +14,7 @@ class NgxOpenresty < Formula
   option 'with-drizzle', "Compile with support for upstream communication with MySQL and/or Drizzle database servers"
   option 'with-postgres', "Compile with support for direct communication with PostgreSQL database servers"
   option 'with-iconv', "Compile with support for converting character encodings"
+  option 'without-debug', "Compile *without* support for debug logging"
 
   skip_clean 'logs'
 
@@ -31,6 +32,7 @@ class NgxOpenresty < Formula
     ]
 
     args << "--with-http_dav_module" if build.include? 'with-webdav'
+    args << "--with-debug" unless build.include? 'without-debug'
 
     # OpenResty options
     args << "--with-luajit" unless build.include? 'without-luajit'
