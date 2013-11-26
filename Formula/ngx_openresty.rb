@@ -2,8 +2,8 @@ require 'formula'
 
 class NgxOpenresty < Formula
   homepage 'http://openresty.org/'
-  url 'http://openresty.org/download/ngx_openresty-1.4.3.1.tar.gz'
-  sha1 'd912da43e6399bda1a4ec73ba8cfb6aad67a8498'
+  url 'http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz'
+  sha1 'fb7007680c7cccf371d29f0f7248c3bb7d70b2c0'
 
   depends_on 'pcre'
   depends_on 'luajit' => :recommended
@@ -38,7 +38,7 @@ class NgxOpenresty < Formula
     args << "--with-http_dav_module" if build.with? 'webdav'
     args << "--with-http_gunzip_module" if build.with? 'gunzip'
 
-    # Debugging mode (with proper debugging symbols)
+    # Debugging mode, unfortunately without debugging symbols
     if build.with? 'debug'
       args << '--with-debug'
       opoo "Openresty will be built --with-debug option, but without debugging symbols. For debugging symbols you have to compile it by hand."
