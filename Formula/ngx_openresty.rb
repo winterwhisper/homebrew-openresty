@@ -16,7 +16,7 @@ class NgxOpenresty < Formula
   option 'with-postgresql', "Compile with support for direct communication with PostgreSQL database servers"
   option 'with-iconv', "Compile with support for converting character encodings"
 
-  option 'with-debug', "Compile with support for debug logging and proper gdb debugging symbols"
+  option 'with-debug', "Compile with support for debug logging but without proper gdb debugging symbols"
 
   # nginx options
   option 'with-webdav', "Compile with ngx_http_dav_module"
