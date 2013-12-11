@@ -7,12 +7,10 @@ class NgxOpenresty < Formula
 
   depends_on 'pcre'
   depends_on 'luajit' => :recommended
-  depends_on 'drizzle' => :optional
   depends_on 'postgresql' => :optional
 
   # openresty options
   option 'without-luajit', "Compile *without* support for the Lua Just-In-Time Compiler"
-  option 'with-drizzle', "Compile with support for upstream communication with MySQL and/or Drizzle database servers"
   option 'with-postgresql', "Compile with support for direct communication with PostgreSQL database servers"
   option 'with-iconv', "Compile with support for converting character encodings"
 
@@ -47,7 +45,6 @@ class NgxOpenresty < Formula
     # OpenResty options
     args << "--with-luajit" unless build.without? 'luajit'
 
-    args << "--with-http_drizzle_module" if build.with? 'drizzle'
     args << "--with-http_postgres_module" if build.with? 'postgres'
     args << "--with-http_iconv_module" if build.with? 'iconv'
 
