@@ -39,6 +39,9 @@ class NgxOpenresty < Formula
     # Debugging mode, unfortunately without debugging symbols
     if build.with? 'debug'
       args << '--with-debug'
+      args << '--with-dtrace-probes'
+      args << '--with-no-pool-patch'
+
       opoo "Openresty will be built --with-debug option, but without debugging symbols. For debugging symbols you have to compile it by hand."
     end
 
