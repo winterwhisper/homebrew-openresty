@@ -7,7 +7,6 @@ class NgxOpenresty < Formula
   sha1 '2a80b2bf24dc22c139d7a87948fad9d0dccd993c'
 
   depends_on 'pcre'
-  depends_on 'luajit' => :recommended
   depends_on 'postgresql' => :optional
 
   # openresty options
@@ -44,7 +43,7 @@ class NgxOpenresty < Formula
     end
 
     # OpenResty options
-    args << "--with-luajit" unless build.without? 'luajit'
+    args << "--with-lua51" if build.without? 'luajit'
 
     args << "--with-http_postgres_module" if build.with? 'postgres'
     args << "--with-http_iconv_module" if build.with? 'iconv'
