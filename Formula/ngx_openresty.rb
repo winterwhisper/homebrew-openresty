@@ -41,7 +41,12 @@ class NgxOpenresty < Formula
       args << '--with-debug'
       args << '--with-dtrace-probes'
       args << '--with-no-pool-patch'
-
+      
+      # this allows setting of `debug.sethook` in luajit
+      unless build.without? 'luajit'
+        args << '--with-luajit-xcflags=-DLUAJIT_ENABLE_CHECKHOOK'
+      end
+      
       opoo "Openresty will be built --with-debug option, but without debugging symbols. For debugging symbols you have to compile it by hand."
     end
 
