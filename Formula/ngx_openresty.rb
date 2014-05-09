@@ -20,6 +20,9 @@ class NgxOpenresty < Formula
   option 'with-webdav', "Compile with ngx_http_dav_module"
   option 'with-gunzip', "Compile with ngx_http_gunzip_module"
 
+  # luajit options
+  option 'with-luajit-checkhook', "Activate debug.sethook(...) compatibility in LuaJIT"
+
   skip_clean 'logs'
 
   def install
@@ -50,6 +53,8 @@ class NgxOpenresty < Formula
 
     args << "--with-http_postgres_module" if build.with? 'postgres'
     args << "--with-http_iconv_module" if build.with? 'iconv'
+
+    args << "--with-luajit-xcflags=-DLUAJIT_ENABLE_CHECKHOOK" if build.with? 'luajit-checkhook'
 
     system "./configure", *args
 
