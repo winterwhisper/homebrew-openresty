@@ -24,7 +24,7 @@ Tap for Homebrew that adds a formula for [OpenResty](http://openresty.org/).
 You might want to use LuaJIT for better performance and maybe also enable
 support Postgres:
 
-    $ brew install ngx_openresty --with-postgres
+    $ brew install ngx_openresty --with-postgresql
 
 For a list of all options available, have a look at:
 
