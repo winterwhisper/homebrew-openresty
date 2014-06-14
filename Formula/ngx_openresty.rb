@@ -3,8 +3,8 @@ require 'formula'
 class NgxOpenresty < Formula
   homepage 'http://openresty.org/'
 
-  url 'http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz'
-  sha1 '3d6a0b0dc10a3618ee5b5e478cd477e4cd66989d'
+  url 'http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz'
+  sha1 '826f24ebc940fa1acb6418f0ece06ca75fb5dfac'
 
   depends_on 'pcre'
   depends_on 'postgresql' => :optional
