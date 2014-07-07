@@ -8,6 +8,7 @@ class NgxOpenresty < Formula
 
   depends_on 'pcre'
   depends_on 'postgresql' => :optional
+  depends_on 'geoip' => :optional
 
   # openresty options
   option 'without-luajit', "Compile *without* support for the Lua Just-In-Time Compiler"
