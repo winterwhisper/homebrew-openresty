@@ -8,6 +8,7 @@ class NgxOpenresty < Formula
 
   depends_on 'pcre'
   depends_on 'postgresql' => :optional
+  depends_on 'geoip' => :optional
 
   # openresty options
   option 'without-luajit', "Compile *without* support for the Lua Just-In-Time Compiler"
@@ -19,6 +20,7 @@ class NgxOpenresty < Formula
   # nginx options
   option 'with-webdav', "Compile with ngx_http_dav_module"
   option 'with-gunzip', "Compile with ngx_http_gunzip_module"
+  option 'with-geoip', "Compile with ngx_http_geoip_module"
 
   skip_clean 'logs'
 
@@ -35,6 +37,7 @@ class NgxOpenresty < Formula
 
     args << "--with-http_dav_module" if build.with? 'webdav'
     args << "--with-http_gunzip_module" if build.with? 'gunzip'
+    args << "--with-http_geoip_module" if build.with? 'geoip'
 
     # Debugging mode, unfortunately without debugging symbols
     if build.with? 'debug'
