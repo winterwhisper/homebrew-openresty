@@ -29,6 +29,14 @@ For a list of all options available, have a look at:
 
     $ brew info ngx_openresty
 
+To run your OpenResty instance:
+
+    $ sudo openresty
+
+To stop your OpenResty instance:
+
+    $ sudo openresty -s stop
+
 ## Contributing
 
 If you want to update or enhance this formular, feel free to send a pull request.
