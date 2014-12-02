@@ -28,6 +28,7 @@ class NgxOpenresty < Formula
   option 'with-webdav', "Compile with ngx_http_dav_module"
   option 'with-gunzip', "Compile with ngx_http_gunzip_module"
   option 'with-geoip', "Compile with ngx_http_geoip_module"
+  option 'with-stub_status', "Compile with ngx_http_stub_status_module"
 
   skip_clean 'logs'
 
@@ -45,6 +46,7 @@ class NgxOpenresty < Formula
     args << "--with-http_dav_module" if build.with? 'webdav'
     args << "--with-http_gunzip_module" if build.with? 'gunzip'
     args << "--with-http_geoip_module" if build.with? 'geoip'
+    args << "--with-http_stub_status_module" if build.with? 'stub_status'
 
     # Debugging mode, unfortunately without debugging symbols
     if build.with? 'debug'
