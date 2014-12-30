@@ -65,7 +65,7 @@ class NgxOpenresty < Formula
     # OpenResty options
     args << "--with-lua51" if build.without? 'luajit'
 
-    args << "--with-http_postgres_module" if build.with? 'postgres'
+    args << "--with-http_postgres_module" if build.with? 'postgresql'
     args << "--with-http_iconv_module" if build.with? 'iconv'
 
     system "./configure", *args
