@@ -4,8 +4,8 @@ class NgxOpenresty < Formula
   homepage 'http://openresty.org/'
 
   stable do
-    url 'http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz'
-    sha1 'a19f95f71e9f98cc8a1f9138737c60f97e50e43c'
+    url 'http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz'
+    sha1 '0cc7a3fe75fbe50dec619af1a09b87f7f8c79e1d'
   end
 
   devel do
@@ -53,12 +53,12 @@ class NgxOpenresty < Formula
       args << '--with-debug'
       args << '--with-dtrace-probes'
       args << '--with-no-pool-patch'
-      
+
       # this allows setting of `debug.sethook` in luajit
       unless build.without? 'luajit'
         args << '--with-luajit-xcflags=-DLUAJIT_ENABLE_CHECKHOOK'
       end
-      
+
       opoo "Openresty will be built --with-debug option, but without debugging symbols. For debugging symbols you have to compile it by hand."
     end
 
