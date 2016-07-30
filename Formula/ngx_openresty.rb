@@ -5,12 +5,12 @@ class NgxOpenresty < Formula
 
   stable do
     url 'http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz'
-    sha1 '9b18a6ec7ce1f3f8bbd59bfe36e2160cc9554909'
+    sha256 '5e8beafb7b32ba62fd34b323b2e9cf49884b4f0491fccf189f0b88b3e25dd0e4'
   end
 
   devel do
     url 'http://openresty.org/download/ngx_openresty-1.7.4.1rc2.tar.gz'
-    sha1 'ac87a3c40e1b459a9564ddd116cf6defb8cd25aa'
+    sha256 '5daab35e41395fe964b10055f83b798415ca6a3d7921ba7cbaa28707aad50888'
   end
 
   depends_on 'pcre'
